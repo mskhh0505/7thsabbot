@@ -17,7 +17,7 @@ login()
         console.log(`login error: ${error}`)
     });
 client.on('ready', () => {
-    client.user.setActivity('Looking at SeohyunCore')
+    client.user.setActivity('ㅁ')
     console.log(`ready ${client.guilds.size} servers.`)
 });
 
