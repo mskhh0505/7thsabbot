@@ -38,7 +38,7 @@ client.on('message', (message) => {
                 nbx.getRankInGroup(groupid, id)
                     .then(function(rank){
                         if (maximumRank <= rank){
-                            message.reply('봇의 권한보다 높은 사람을 내릴 수 없습니다.')
+                            message.reply('봇의 권한보다 높은 사람을 올릴 수 없습니다.')
                         } else{
                             nbx.promote(groupid, id)
                                 .then(function(roles){
