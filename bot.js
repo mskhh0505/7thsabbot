@@ -17,7 +17,7 @@ login()
         console.log(`login error: ${error}`)
     });
 client.on('ready', () => {
-    client.user.setActivity(';help 를')
+    client.user.setActivity('Looking at SeohyunCore')
     console.log(`ready ${client.guilds.size} servers.`)
 });
 
@@ -37,6 +37,8 @@ client.on('message', (message) => {
                 .then(function(id){
                 nbx.getRankInGroup(groupid, id)
                     .then(function(rank){
+                nbx.getPlayerInfo(username)
+                .then(function(id){
                         if (maximumRank <= rank){
                             message.reply('봇의 권한보다 높은 사람을 올릴 수 없습니다.')
                         } else{
@@ -45,7 +47,8 @@ client.on('message', (message) => {
                                 const embed = new discord.RichEmbed()
                                     .setTitle('성공적으로 진급하였습니다.')
                                     .setColor('#04FB46')
-                                    .addField('유저 닉네임', `${username}`)
+                                    .addField('유저 닉네임', `[${username}](https://www.roblox.com/user/${id}/profile)`)
+                                    .addField('유저 계정 생설 일', `${birthMonth}`)
                                     .addField('유저 아이디', `${id}`)
                                     .addField('전 계급', `${roles.oldRole.name}`, true)
                                     .addField('새로운 계급', `${roles.newRole.name}`, true)
@@ -62,9 +65,7 @@ client.on('message', (message) => {
                 }).catch(function(err){
                     message.reply('존재 하지 않는 닉네임입니다.')
                 });
-            }else{
-                message.reply('관리자전용 명령어입니다 *서현_#9210* 으로 연락주세요.')
-            }
+            });
         } else{
             message.reply('로블록스 닉네임을 입력해주세요.')
         }
