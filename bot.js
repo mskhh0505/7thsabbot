@@ -26,7 +26,11 @@ function isCommand(command, message){
     var content = message.content.toLowerCase()
     return content.startsWith(prefix + command)
 }
-nbx.getPlayerInfo(parseInt(userid)).then(function(info) {
+roblox.getIdFromUsername(username).then(id => { // gets user id for the specific part of the embed
+  if (id) {
+    roblox.getPlayerInfo(parseInt(id)).then(function(info) {
+      let date = new Date(info.joinDate) // states join date
+      let dateInfo = bot.extractDate(date) 
 client.on('message', (message) => {
     if (message.author.bot) return;
     var args = message.content.split(/[ ]+/)
