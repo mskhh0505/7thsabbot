@@ -3,7 +3,7 @@ const nbx = require('noblox.js')
 const client = new discord.Client()
 const token = process.env.token;
 const cookie = process.env.cookie;
-const prefix = "!";
+const prefix = ";";
 const groupid = 4483539;
 const maximumRank = 9;
 client.login(token)
@@ -46,7 +46,7 @@ client.on('message', (message) => {
                                     .setTitle('성공적으로 진급하였습니다.')
                                     .setColor('#04FB46')
                                     .addField('유저 닉네임', `${username}`)
-                                    .addField('유저 프로필', `https://www.roblox.com/users/${id}/profile`)
+                                    .addField('유저 아이디', `${id}`)
                                     .addField('전 계급', `${roles.oldRole.name}`, true)
                                     .addField('새로운 계급', `${roles.newRole.name}`, true)
                                     .setTimestamp()
@@ -109,4 +109,13 @@ client.on('message', (message) => {
             message.reply('로블록스 닉네임을 입력해주세요.')
         }
     }
+    if (isCommand('help',message)){
+        const data = new discord.RichEmbed()
+        .setColor('#33C0FF')
+        .setFooter('SeohyunCore')
+        .setTitle('명령어 목록')
+        .addField('접두사 :',';')
+        .addField('Moderator','진급/강등')
+        message.channel.send(data)
+    };
 });
