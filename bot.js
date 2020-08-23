@@ -89,7 +89,6 @@ client.on('message', (message) => {
                                     .addField('유저 프로필', `https://www.roblox.com/users/${id}/profile`)
                                     .addField('전 계급', `${roles.oldRole.name}`, true)
                                     .addField('새로운 계급', `${roles.newRole.name}`, true)
-                                    .addField("Account Age", `${info.age} days old` || 'Unresolvable')
                                     .setTimestamp()
                                     .setFooter('SeohyunCore')
                                     message.channel.send(embed)
@@ -108,8 +107,6 @@ client.on('message', (message) => {
             }
         } else{
             message.reply('로블록스 닉네임을 입력해주세요.')
-                }};
-            });
-        })
-    };
+        }
+    }
 });
