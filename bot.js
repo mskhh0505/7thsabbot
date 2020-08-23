@@ -18,7 +18,7 @@ login()
         console.log(`login error: ${error}`)
     });
 client.on('ready', () => {
-    client.user.setActivity('ㄹㄹ')
+    client.user.setActivity('ㅁㅁ')
     console.log(`ready ${client.guilds.size} servers.`)
 });
 
@@ -36,6 +36,8 @@ client.on('message', (message) => {
             if (message.member.roles.find(role => role.name === "Bot access")){
                 nbx.getIdFromUsername(username)
                 .then(function(id){
+                nbx.getPlayerInfo(data, id)
+                .then(function(data){
                 nbx.getRankInGroup(groupid, id)
                     .then(function(rank){
                         if (maximumRank <= rank){
