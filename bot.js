@@ -6,7 +6,7 @@ const cookie = process.env.cookie
 const prefix = "!";
 const groupid = 4483539;
 const maximumRank = 9;
-const more = await nbx.getBlurb(data.id)
+const more = nbx.getBlurb(data.id)
 client.login(token)
 function login(){
     return nbx.cookieLogin(cookie);
