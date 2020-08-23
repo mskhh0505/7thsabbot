@@ -17,7 +17,7 @@ login()
         console.log(`login error: ${error}`)
     });
 client.on('ready', () => {
-    client.user.setActivity('Looking at SeohyunCore')
+    client.user.setActivity('서현코어를 지켜보는중...')
     console.log(`ready ${client.guilds.size} servers.`)
 });
 
