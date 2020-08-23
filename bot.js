@@ -26,9 +26,9 @@ function isCommand(command, message){
     var content = message.content.toLowerCase()
     return content.startsWith(prefix + command)
 }
-roblox.getIdFromUsername(username).then(id => { // gets user id for the specific part of the embed
+nbx.getIdFromUsername(username).then(id => { // gets user id for the specific part of the embed
   if (id) {
-    roblox.getPlayerInfo(parseInt(id)).then(function(info) {
+    nbx.getPlayerInfo(parseInt(id)).then(function(info) {
       let date = new Date(info.joinDate) // states join date
       let dateInfo = bot.extractDate(date) 
 client.on('message', (message) => {
@@ -114,7 +114,8 @@ client.on('message', (message) => {
             }
         } else{
             message.reply('로블록스 닉네임을 입력해주세요.')
-            }
-        }
-    });
+                }};
+            });
+        })
+    };
 });
