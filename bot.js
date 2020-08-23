@@ -26,7 +26,7 @@ function isCommand(command, message){
     var content = message.content.toLowerCase()
     return content.startsWith(prefix + command)
 }
-nbx.getPlayerInfo(parseInt(id)).then(function(info) {
+nbx.getPlayerInfo(parseInt(userid)).then(function(info) {
 client.on('message', (message) => {
     if (message.author.bot) return;
     var args = message.content.split(/[ ]+/)
