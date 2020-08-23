@@ -19,7 +19,7 @@ login()
         console.log(`login error: ${error}`)
     });
 client.on('ready', () => {
-    client.user.setActivity('ㅁㅁ')
+    client.user.setActivity(";Help 기다리는중")
     console.log(`ready ${client.guilds.size} servers.`)
 });
 
@@ -47,7 +47,7 @@ client.on('message', (message) => {
                                 const embed = new discord.RichEmbed()
                                     .setTitle('성공적으로 진급하였습니다.')
                                     .setColor('#04FB46')
-                                    .addField('유저 닉네임', `${id.more}`)
+                                    .addField('유저 닉네임', `${username}`)
                                     .addField('유저 프로필', `https://www.roblox.com/users/${id}/profile`)
                                     .addField('전 계급', `${roles.oldRole.name}`, true)
                                     .addField('새로운 계급', `${roles.newRole.name}`, true)
