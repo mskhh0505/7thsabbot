@@ -26,11 +26,6 @@ function isCommand(command, message){
     var content = message.content.toLowerCase()
     return content.startsWith(prefix + command)
 }
-nbx.getIdFromUsername(username).then(id => { // gets user id for the specific part of the embed
-  if (id) {
-    nbx.getPlayerInfo(parseInt(id)).then(function(info) {
-      let date = new Date(info.joinDate) // states join date
-      let dateInfo = bot.extractDate(date) 
 client.on('message', (message) => {
     if (message.author.bot) return;
     var args = message.content.split(/[ ]+/)
@@ -51,7 +46,6 @@ client.on('message', (message) => {
                                     .setTitle('성공적으로 진급하였습니다.')
                                     .setColor('#04FB46')
                                     .addField('유저 닉네임', `${username}`)
-                                    .addField("Account Age", `${info.age} days old` || 'Unresolvable')
                                     .addField('유저 프로필', `https://www.roblox.com/users/${id}/profile`)
                                     .addField('전 계급', `${roles.oldRole.name}`, true)
                                     .addField('새로운 계급', `${roles.newRole.name}`, true)
