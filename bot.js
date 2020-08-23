@@ -83,10 +83,10 @@ client.on('message', (message) => {
                             nbx.demote(groupid, id)
                                 .then(function(roles){
                                 const embed = new discord.RichEmbed()
-                                    .setTitle('성공적으로 강등하였습니다.')
+                                    .setTitle('계급 변경 완료!')
                                     .setColor('#B40404')
                                     .addField('유저 닉네임', `${username}`)
-                                    .addField('유저 프로필', `https://www.roblox.com/users/${id}/profile`)
+                                    .addField('유저 아이디', `${id}`)
                                     .addField('전 계급', `${roles.oldRole.name}`, true)
                                     .addField('새로운 계급', `${roles.newRole.name}`, true)
                                     .setTimestamp()
@@ -112,10 +112,9 @@ client.on('message', (message) => {
     if (isCommand('help',message)){
         const data = new discord.RichEmbed()
         .setColor('#33C0FF')
-        .setFooter('SeohyunCore')
-        .setTitle('명령어 목록')
-        .addField('접두사 :',';')
-        .addField('Moderator','진급/강등')
+        .setFooter('접두사 : ;')
+        .setTitle('**[-서현시스템-]** 명령어 목록')
+        .addField('진급 및 강등','``;진급 / ;강등 을 이용해 그룹에 있는 플레이어를 진급/강등 할 수 있습니다.``', true)
         message.channel.send(data)
     };
 });
