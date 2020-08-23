@@ -117,5 +117,6 @@ client.on('message', (message) => {
         .setTitle('**[-서현시스템-]** 명령어 목록')
         .addField('진급 및 강등','``;진급 / ;강등 을 이용해 그룹에 있는 플레이어를 진급/강등 할 수 있습니다.``', true)
         message.channel.send(data)
-    };
+        }
+    }
 });
