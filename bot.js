@@ -17,7 +17,7 @@ login()
         console.log(`login error: ${error}`)
     });
 client.on('ready', () => {
-    client.user.setActivity(";Help 기다리는중")
+    client.user.setActivity("서현이 잠자러감 24시간 봇이예요.")
     console.log(`ready ${client.guilds.size} servers.`)
 });
 
