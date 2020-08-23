@@ -2,7 +2,7 @@ const discord = require('discord.js')
 const nbx = require('noblox.js')
 const client = new discord.Client()
 const token = process.env.token;
-const cookie = process.env.cookie
+const cookie = process.env.cookie;
 const prefix = "!";
 const groupid = 4483539;
 const maximumRank = 9;
@@ -18,7 +18,7 @@ login()
         console.log(`login error: ${error}`)
     });
 client.on('ready', () => {
-    client.user.setActivity('ㅇㅇ')
+    client.user.setActivity('ㄹㄹ')
     console.log(`ready ${client.guilds.size} servers.`)
 });
 
