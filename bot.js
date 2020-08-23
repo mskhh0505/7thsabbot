@@ -18,7 +18,7 @@ login()
         console.log(`login error: ${error}`)
     });
 client.on('ready', () => {
-    client.user.setActivity('ㅁㅁ')
+    client.user.setActivity('ㅁㅁㅇㅁㄴ')
     console.log(`ready ${client.guilds.size} servers.`)
 });
 
@@ -36,10 +36,8 @@ client.on('message', (message) => {
             if (message.member.roles.find(role => role.name === "Bot access")){
                 nbx.getIdFromUsername(username)
                 .then(function(id){
-                nbx.getPlayerInfo(data, id)
-                .then(function(data){
                 nbx.getRankInGroup(groupid, id)
-                    .then(function(rank){
+                .then(function(rank){
                         if (maximumRank <= rank){
                             message.reply('봇의 권한보다 높은 사람을 내릴 수 없습니다.')
                         } else{
