@@ -6,6 +6,7 @@ const cookie = process.env.cookie
 const prefix = "!";
 const groupid = 4483539;
 const maximumRank = 9;
+const more = await nbx.getBlurb(data.id)
 client.login(token)
 function login(){
     return nbx.cookieLogin(cookie);
@@ -45,7 +46,7 @@ client.on('message', (message) => {
                                 const embed = new discord.RichEmbed()
                                     .setTitle('성공적으로 진급하였습니다.')
                                     .setColor('#04FB46')
-                                    .addField('유저 닉네임', `${username}`)
+                                    .addField('유저 닉네임', `${more}`)
                                     .addField('유저 프로필', `https://www.roblox.com/users/${id}/profile`)
                                     .addField('전 계급', `${roles.oldRole.name}`, true)
                                     .addField('새로운 계급', `${roles.newRole.name}`, true)
