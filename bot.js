@@ -18,7 +18,7 @@ login()
         console.log(`login error: ${error}`)
     });
 client.on('ready', () => {
-    client.user.setActivity('ㅁㅁ')
+    client.user.setActivity('ㅇㅇ')
     console.log(`ready ${client.guilds.size} servers.`)
 });
 
