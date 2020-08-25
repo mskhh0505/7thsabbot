@@ -3,7 +3,7 @@ const nbx = require('noblox.js')
 const client = new discord.Client()
 const token = process.env.token;
 const cookie = process.env.cookie;
-const prefix = "!";
+const prefix = ";";
 const groupid = 4483539;
 const maximumRank = 9;
 client.login(token)
@@ -17,7 +17,7 @@ login()
         console.log(`login error: ${error}`)
     });
 client.on('ready', () => {
-    client.user.setActivity("서현이 잠자러감 24시간 봇이예요.")
+    client.user.setActivity("서현봇을 사용")
     console.log(`ready ${client.guilds.size} servers.`)
 });
 
